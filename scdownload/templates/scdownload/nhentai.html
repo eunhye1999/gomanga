@@ -1,0 +1,14 @@
+{% extends 'scdownload/base.html' %}
+{% block content %}
+
+    <form action="{% url 'scdownload:nhentaiRe' %}" method="post">
+        {% csrf_token %}
+        Link Site :
+        <br>
+        <input type="text" name="link" value="">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form> 
+    <a href="{% url 'scdownload:index' %}">Go Back</a>
+
+{% endblock %}

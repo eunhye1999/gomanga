@@ -1,0 +1,12 @@
+{% extends 'scdownload/base.html' %}
+{% block content %}
+
+    {% if list_site %}
+        <ul>
+        {% for site in list_site %}
+            <li><a href="/{{ site }}/">{{ site }}</a></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+{% endblock %}

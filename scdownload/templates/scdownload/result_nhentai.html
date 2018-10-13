@@ -1,0 +1,22 @@
+{% extends 'scdownload/base.html' %}
+{% block content %}
+
+    {% if links %}
+        <ul>
+        {% for link in links %}
+            <li><a href= "{{ link }}">{{ link }}</a></li>
+        {% endfor %}
+        </ul>
+    {% endif %}
+
+    <br>
+    <form action="{% url 'scdownload:downloadIMG' %}" method="post">
+        {% csrf_token %}
+        file name: <input type="text" name="filename" value="">
+        <input type="hidden" name="site" value="{{ links }}">
+        <input type="submit" value="Download" />
+    </form>
+
+    <a href="{% url 'scdownload:index' %}">Go Back</a>
+
+{% endblock %}

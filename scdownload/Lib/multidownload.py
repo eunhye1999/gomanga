@@ -4,12 +4,11 @@ from queue import Queue
 import time, re
 
 class Multidownload:
-  
-  temp = []
-  page = []
 
   def __init__(self, links):
     self.links = links
+    self.temp = []
+    self.page = []
    
   def read_url(self,url):
     try:
@@ -45,9 +44,8 @@ class Multidownload:
   
   def __sortData(self, data, page):
     dataSort = []
-    for i in range(0,len(data)):
-      inde = page.index(str(i+1))
+    for j in range(0,len(page)):
+      inde = page.index(str(j+1))
       dataSort.append(data[inde])
-      
     return dataSort
     

@@ -9,8 +9,6 @@ from .Lib.multidownload import Multidownload
 from zipfile import ZipFile
 from urllib.request import urlopen
 from io import StringIO, BytesIO
-from multiprocessing import Queue
-import threading
 
 def index(request):
     list_site = ["nhentai"]

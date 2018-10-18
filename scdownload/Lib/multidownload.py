@@ -29,7 +29,7 @@ class Multidownload:
   def process(self):
     self.q = Queue()
     
-    for i in range(len(self.links)):
+    for i in range(10):
       t = Thread(target=self.worker)
       t.daemon = True
       t.start()
